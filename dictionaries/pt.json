@@ -8,38 +8,52 @@
   },
   "hero": {
     "name": "João Guimarães",
-    "card_bio": "Um Desenvolvedor Full-Stack que cria experiências web limpas e rápidas.",
+    "card_bio": "Fullstack Developer · Websites & Web Apps · Disponível para Freelance",
     "title_line1": "FULL-STACK",
     "title_line2": "DEVELOPER",
     "tagline": "Apaixonado por criar experiências intuitivas e envolventes. Especializado em transformar ideias em produtos bem construídos.",
     "stats": [
       { "value": "+6", "label": "Anos de Experiência" },
-      { "value": "+10", "label": "Projetos Concluídos" }
+      { "value": "+10", "label": "Projetos Concluídos" },
+      { "value": "+5", "label": "Clientes Satisfeitos" }
     ]
   },
   "work": {
     "title_line1": "MEUS",
     "title_line2": "PROJETOS",
+    "github_cta": "Ver todos os projetos no GitHub",
     "projects": [
       {
+        "slug": "project-one",
         "title": "Projeto Um",
         "description": "Uma aplicação web full-stack construída com Next.js e TypeScript. Foco em performance e experiência do desenvolvedor.",
+        "long_description": "Este projeto foi criado para resolver o desafio de entregar experiências web rápidas e acessíveis em escala. A arquitetura aproveita o App Router do Next.js para renderização server-side, TypeScript para segurança de tipos em toda a base de código e Tailwind CSS para um sistema de design consistente.\n\nAs principais decisões técnicas incluíram a implementação de regeneração estática incremental para conteúdo dinâmico, configuração de um pipeline CI/CD com testes automatizados e otimização dos Core Web Vitals para alcançar pontuação perfeita no Lighthouse.",
+        "image": null,
+        "images": [],
         "tags": ["Next.js", "TypeScript", "Tailwind CSS"],
         "github": "https://github.com/joaoguimaraes",
         "live": null
       },
       {
-        "title": "Projeto Dois",
-        "description": "Uma plataforma de e-commerce mobile-first com gerenciamento de estoque em tempo real e fluxo de checkout simples.",
-        "tags": ["React", "Node.js", "PostgreSQL"],
-        "github": "https://github.com/joaoguimaraes",
-        "live": null
+        "slug": "project-two",
+        "title": "Cascais Volleyball Cup",
+        "description": "O maior torneio internacional de voleibol do sul de Portugal. Plataforma completa com inscrições de equipas, displays ao vivo, galeria de fotos e suporte multilíngue.",
+        "long_description": "O Cascais Volleyball Cup é o maior torneio internacional de voleibol do sul de Portugal, reunindo atletas e equipas de toda a Europa junto à costa atlântica. A plataforma foi desenvolvida para gerir todos os aspetos do evento — desde as inscrições até à exibição de resultados e conteúdos de média.\n\nAs principais funcionalidades incluem um sistema de inscrição de equipas com validação de formulários, exibição de horários e resultados em tempo real, galeria de fotos interativa e internacionalização completa com suporte para português e inglês.",
+        "image": null,
+        "images": [],
+        "tags": ["React", "Next.js", "i18n"],
+        "github": "https://github.com/JoaoGuimaraes22/cascaisvolleycup",
+        "live": "https://www.cascaisvolley.com/en"
       },
       {
-        "title": "Projeto Três",
-        "description": "Uma ferramenta CLI de código aberto que automatiza tarefas repetitivas de desenvolvimento, economizando horas de trabalho manual.",
-        "tags": ["TypeScript", "CLI", "Node.js"],
-        "github": "https://github.com/joaoguimaraes",
+        "slug": "project-three",
+        "title": "AR Field Service Platform",
+        "description": "Aplicação móvel AR em Unity 3D integrada com Microsoft Dynamics 365, Field Service, Teams e Remote Assist — com deteção de objetos via TensorFlow em C# e ML.NET.",
+        "long_description": "Este projeto combina dois sistemas profundamente integrados desenvolvidos para modernizar operações de manutenção no terreno. O componente de Realidade Aumentada é uma aplicação móvel Unity 3D para Android que se conecta ao Microsoft Dynamics 365, Field Service, Microsoft Teams e Remote Assist — permitindo que técnicos visualizem ordens de trabalho, dados de ativos e orientações remotas diretamente sobre os equipamentos físicos através dos seus dispositivos.\n\nA camada de reconhecimento é alimentada por uma aplicação C# desenvolvida com ML.NET e TensorFlowSharp que realiza deteção de objetos em tempo real a partir de câmeras ao vivo. Os equipamentos identificados são automaticamente associados a registos de serviço no Dynamics 365, ligando o mundo físico ao digital num fluxo de trabalho integrado.",
+        "image": null,
+        "images": [],
+        "tags": ["C#", "Unity", "TensorFlow", "Dynamics 365", "AR"],
+        "github": "https://github.com/JoaoGuimaraes22/AugmentedReality-DynamicsIntegration",
         "live": null
       }
     ]
@@ -49,33 +63,45 @@
     "title_line2": "EXPERIÊNCIA",
     "items": [
       {
-        "role": "Desenvolvedor Full-Stack",
-        "company": "Nome da Empresa",
-        "period": "2023 — Presente",
-        "description": "Construção e manutenção de aplicações web escaláveis. Liderança das decisões de arquitetura frontend e mentoria de desenvolvedores juniores."
+        "role": "Engenheiro de Software Freelance",
+        "company": "Independente",
+        "period": "Out 2022 — Presente",
+        "description": "Desenvolvimento de websites, aplicações web e software personalizado para clientes de diferentes setores. Entrega full-stack com React / Next.js, .NET / Node.js e Azure — desde a definição e design até à implementação e manutenção. Desenvolveu a plataforma Cascais Volleyball Cup, um evento desportivo de grande dimensão ainda ativo em Portugal."
       },
       {
-        "role": "Desenvolvedor Frontend",
-        "company": "Empresa Anterior",
-        "period": "2021 — 2023",
-        "description": "Desenvolvimento de bibliotecas de componentes reutilizáveis e melhoria de 40% na performance das aplicações através de code splitting e lazy loading."
+        "role": "Consultor de Desenvolvimento de Software",
+        "company": "UNIPARTNER IT Services",
+        "period": "Out 2019 — Set 2022",
+        "description": "Consultor de desenvolvimento de software integrado em projetos de clientes empresariais. Construção e manutenção de aplicações full-stack com .NET, C#, React e Azure. Trabalhou em chatbots de produção, arquitetura de MLOps e workflows de produtividade para clientes enterprise, ao longo de todo o ciclo de entrega."
       },
       {
-        "role": "Desenvolvedor Júnior",
-        "company": "Primeiro Emprego",
-        "period": "2020 — 2021",
-        "description": "Início da carreira construindo ferramentas internas e dashboards. Sólida base em React e APIs REST."
+        "role": "Treinador de Voleibol",
+        "company": "Grupo Desportivo Estoril Praia",
+        "period": "Jun 2024 — Presente",
+        "description": "Treinador principal de dois escalões de formação (Infantis A e Cadetes A) a competir no campeonato nacional. Planeia e conduz 4–5 sessões de treino por semana, com programas estruturados de desenvolvimento de atletas. Gere a preparação para competição, decisões em jogo e análises pós-jogo."
       }
     ]
   },
   "about": {
     "title_line1": "SOBRE",
     "title_line2": "MIM",
-    "bio": "Sou um desenvolvedor full-stack baseado no Brasil, apaixonado por construir produtos rápidos, acessíveis e agradáveis de usar. Tenho forte foco na plataforma web e adoro trabalhar em toda a stack — desde o design de APIs até UIs pixel-perfect.\n\nQuando não estou programando, provavelmente estou explorando novas tecnologias, lendo, ou tomando café demais.",
-    "skills_heading": "Tecnologias",
-    "skills": [
-      "TypeScript", "React", "Next.js", "Node.js",
-      "PostgreSQL", "Tailwind CSS", "Docker", "Git"
+    "bio": "Construo websites, aplicações web e software personalizado para empresas que precisam de resultados de qualidade.\n\nBackground fullstack no ecossistema Microsoft (.NET, Azure, Power Platform) e frontend moderno (React, Next.js, Node.js) — desde sites para pequenos negócios até aplicações de produção. Tenho experiência em consultoria e freelance, conduzindo projetos do início ao fim.\n\nPosso construir websites e landing pages, aplicações web e ferramentas internas, APIs e integrações backend, e automações e workflows de negócio personalizados.\n\nTrabalho diretamente com clientes — sem intermediários, sem overhead. Tens um developer que é dono do projeto do início ao fim.",
+    "fun_facts": [
+      { "emoji": "☕", "text": "Movido a café — de preferência espresso" },
+      { "emoji": "🎮", "text": "Gamer competitivo nos fins de semana" },
+      { "emoji": "🌙", "text": "Melhor código depois da meia-noite" },
+      { "emoji": "🤝", "text": "Colaborador open source de coração" }
+    ]
+  },
+  "techstack": {
+    "title_line1": "TECH",
+    "title_line2": "STACK",
+    "categories": [
+      { "name": "Frontend", "items": ["React.js", "Next.js", "JavaScript", "Redux.js", "HTML5", "CSS", "SASS"] },
+      { "name": "Backend", "items": ["Node.js", "Express.js", "C#", "ASP.NET", ".NET Framework"] },
+      { "name": "Banco de Dados", "items": ["SQL", "MySQL", "MongoDB"] },
+      { "name": "Cloud & DevOps", "items": ["Azure", "Docker", "Kubernetes", "DigitalOcean", "Bash"] },
+      { "name": "IA & Ferramentas", "items": ["NLP", "Dialogflow", "Bot Framework", "AR Foundation", "Unity", "VS Code"] }
     ]
   },
   "contact": {
@@ -85,11 +111,14 @@
     "form_name": "Nome",
     "form_email": "Email",
     "form_message": "Mensagem",
+    "form_name_placeholder": "Seu Nome",
+    "form_email_placeholder": "seu@email.com",
+    "form_message_placeholder": "Me conte sobre o seu projeto...",
     "form_submit": "Enviar Mensagem",
     "form_success": "Mensagem enviada! Responderei em breve.",
     "email_label": "Enviar email",
-    "email": "joao@example.com",
-    "github": "https://github.com/joaoguimaraes",
-    "linkedin": "https://linkedin.com/in/joaoguimaraes"
+    "email": "Jssgmrs22@gmail.com",
+    "github": "https://github.com/JoaoGuimaraes22",
+    "linkedin": "https://www.linkedin.com/in/joão-sebastião-guimarães-4abaa7197/"
   }
 }

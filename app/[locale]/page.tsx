@@ -8,6 +8,7 @@ import Experience from "./components/Experience";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ScrollDownCue from "./components/ScrollDownCue";
+import TechStack from "./components/TechStack";
 
 export default async function Page({
   params,
@@ -48,8 +49,9 @@ export default async function Page({
 
           <div className="xl:max-w-4xl 2xl:max-w-5xl">
             <Hero dict={dict} />
-            <Work dict={dict} />
+            <Work dict={dict} locale={locale} />
             <Experience dict={dict} />
+            <TechStack dict={dict} />
             <About dict={dict} />
             <Contact dict={dict} />
           </div>

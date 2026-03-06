@@ -12,6 +12,9 @@ interface ContactProps {
       form_name: string;
       form_email: string;
       form_message: string;
+      form_name_placeholder: string;
+      form_email_placeholder: string;
+      form_message_placeholder: string;
       form_submit: string;
       form_success: string;
       email_label: string;
@@ -95,9 +98,10 @@ export default function Contact({ dict }: ContactProps) {
                   <input
                     type="text"
                     required
+                    placeholder={contact.form_name_placeholder}
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-blue-500/50"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-zinc-600 focus:border-blue-500/50"
                   />
                 </div>
                 <div>
@@ -107,9 +111,10 @@ export default function Contact({ dict }: ContactProps) {
                   <input
                     type="email"
                     required
+                    placeholder={contact.form_email_placeholder}
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-blue-500/50"
+                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-zinc-600 focus:border-blue-500/50"
                   />
                 </div>
               </div>
@@ -120,9 +125,10 @@ export default function Contact({ dict }: ContactProps) {
                 <textarea
                   required
                   rows={5}
+                  placeholder={contact.form_message_placeholder}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors focus:border-blue-500/50"
+                  className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-zinc-600 focus:border-blue-500/50"
                 />
               </div>
               <button

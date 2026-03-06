@@ -2,6 +2,7 @@
 
 import { motion, useInView, animate } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Stat {
   value: string;
@@ -34,7 +35,12 @@ function CountUp({ value, inView }: { value: string; inView: boolean }) {
     return controls.stop;
   }, [inView, number]);
 
-  return <>{prefix}{display}</>;
+  return (
+    <>
+      {prefix}
+      {display}
+    </>
+  );
 }
 
 export default function Hero({ dict }: HeroProps) {
@@ -45,8 +51,22 @@ export default function Hero({ dict }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative flex flex-col justify-center overflow-hidden px-6 py-14 md:min-h-[calc(100vh-3.5rem)] md:px-8 md:py-16 xl:px-16 xl:py-24"
+      className="relative flex flex-col justify-center overflow-hidden px-6 py-14 min-h-[calc(100vh-3.5rem)] md:px-8 md:py-16 xl:px-16 xl:py-24"
     >
+      {/* Background profile image */}
+      <div className="pointer-events-none absolute inset-0">
+        <Image
+          src="/hero-img.jpg"
+          alt=""
+          fill
+          className="object-cover object-top opacity-25"
+          priority
+        />
+
+        {/* Bottom fade */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/25 from-0% via-transparent to-transparent" />
+      </div>
+
       {/* Subtle blue glow */}
       <div className="pointer-events-none absolute -top-40 -left-20 h-128 w-lg rounded-full bg-blue-500/5 blur-3xl" />
 
@@ -70,7 +90,11 @@ export default function Hero({ dict }: HeroProps) {
       <motion.p
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] as const }}
+        transition={{
+          duration: 0.6,
+          delay: 0.15,
+          ease: [0.16, 1, 0.3, 1] as const,
+        }}
         className="mb-12 max-w-md text-base leading-relaxed text-zinc-400 xl:max-w-xl xl:text-lg"
       >
         {hero.tagline}
@@ -83,7 +107,11 @@ export default function Hero({ dict }: HeroProps) {
             key={stat.label}
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 + i * 0.1, ease: "easeOut" }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3 + i * 0.1,
+              ease: "easeOut",
+            }}
           >
             <div className="text-4xl font-black text-white sm:text-5xl xl:text-6xl">
               <CountUp value={stat.value} inView={inView} />

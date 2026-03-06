@@ -3,14 +3,25 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+const FUN_FACT_COLORS = [
+  { card: "border-amber-500/20 bg-amber-500/5", emoji: "text-amber-400" },
+  { card: "border-violet-500/20 bg-violet-500/5", emoji: "text-violet-400" },
+  { card: "border-blue-500/20 bg-blue-500/5", emoji: "text-blue-400" },
+  { card: "border-emerald-500/20 bg-emerald-500/5", emoji: "text-emerald-400" },
+];
+
+interface FunFact {
+  emoji: string;
+  text: string;
+}
+
 interface AboutProps {
   dict: {
     about: {
       title_line1: string;
       title_line2: string;
       bio: string;
-      skills_heading: string;
-      skills: string[];
+      fun_facts: FunFact[];
     };
   };
 }
@@ -37,44 +48,35 @@ export default function About({ dict }: AboutProps) {
         </div>
       </motion.div>
 
-      <div className="grid gap-12 md:grid-cols-2">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-        >
-          {about.bio.split("\n\n").map((paragraph, i) => (
-            <p
-              key={i}
-              className="mb-4 text-base leading-relaxed text-zinc-400 last:mb-0 xl:text-lg"
-            >
-              {paragraph}
-            </p>
-          ))}
-        </motion.div>
+      {/* Bio */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+        className="mb-10 max-w-2xl space-y-4 text-base leading-relaxed text-zinc-400 xl:text-lg"
+      >
+        {about.bio.split("\n\n").map((para, i) => (
+          <p key={i}>{para}</p>
+        ))}
+      </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-        >
-          <h3 className="mb-4 font-mono text-sm text-zinc-500">
-            {about.skills_heading}
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {about.skills.map((skill, i) => (
-              <motion.span
-                key={skill}
-                initial={{ opacity: 0, y: 8 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.3, delay: 0.25 + i * 0.05 }}
-                className="rounded-full border border-blue-500/20 bg-blue-500/5 px-4 py-1.5 font-mono text-sm text-blue-300 transition-colors duration-150 hover:border-blue-500/40 hover:bg-blue-500/10"
-              >
-                {skill}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
+      {/* Fun facts */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {about.fun_facts.map((fact, i) => {
+          const color = FUN_FACT_COLORS[i % FUN_FACT_COLORS.length];
+          return (
+            <motion.div
+              key={fact.text}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.4, delay: 0.2 + i * 0.08, ease: "easeOut" }}
+              className={`flex flex-col gap-3 rounded-2xl border p-5 ${color.card}`}
+            >
+              <span className={`text-2xl leading-none ${color.emoji}`}>{fact.emoji}</span>
+              <p className="text-xs leading-relaxed text-zinc-400">{fact.text}</p>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
