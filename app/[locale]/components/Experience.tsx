@@ -54,7 +54,7 @@ export default function Experience({ dict }: ExperienceProps) {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="experience" className="px-6 py-16 md:px-8 md:py-24">
+    <section id="experience" className="px-6 py-16 md:px-8 md:py-24 xl:px-16 xl:py-32">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 24 }}

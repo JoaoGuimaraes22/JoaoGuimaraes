@@ -45,7 +45,7 @@ export default function Hero({ dict }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative flex flex-col justify-center overflow-hidden px-6 py-14 md:min-h-[calc(100vh-3.5rem)] md:px-8 md:py-16"
+      className="relative flex flex-col justify-center overflow-hidden px-6 py-14 md:min-h-[calc(100vh-3.5rem)] md:px-8 md:py-16 xl:px-16 xl:py-24"
     >
       {/* Subtle blue glow */}
       <div className="pointer-events-none absolute -top-40 -left-20 h-128 w-lg rounded-full bg-blue-500/5 blur-3xl" />
@@ -71,7 +71,7 @@ export default function Hero({ dict }: HeroProps) {
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] as const }}
-        className="mb-12 max-w-md text-base leading-relaxed text-zinc-400"
+        className="mb-12 max-w-md text-base leading-relaxed text-zinc-400 xl:max-w-xl xl:text-lg"
       >
         {hero.tagline}
       </motion.p>
@@ -85,10 +85,10 @@ export default function Hero({ dict }: HeroProps) {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.3 + i * 0.1, ease: "easeOut" }}
           >
-            <div className="text-4xl font-black text-white sm:text-5xl">
+            <div className="text-4xl font-black text-white sm:text-5xl xl:text-6xl">
               <CountUp value={stat.value} inView={inView} />
             </div>
-            <div className="mt-1 font-mono text-xs uppercase tracking-widest text-zinc-500">
+            <div className="mt-1 font-mono text-xs uppercase tracking-widest text-zinc-500 xl:text-sm">
               {stat.label}
             </div>
           </motion.div>

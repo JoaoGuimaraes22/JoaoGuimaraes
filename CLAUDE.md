@@ -3,6 +3,7 @@
 Next.js 16.1.6 App Router · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion
 
 ## Stack & Config
+
 - **Middleware file**: `proxy.ts` (NOT `middleware.ts` — this project's Next.js version uses `proxy.ts`)
 - **i18n**: No external library. `i18n-config.ts` + `get-dictionary.ts` + `dictionaries/en.json` + `dictionaries/pt.json`
 - **Locales**: `en` (default), `pt`
@@ -13,7 +14,8 @@ Next.js 16.1.6 App Router · React 19 · TypeScript · Tailwind CSS v4 · Framer
 - **Site URL**: `https://joao-guimaraes.vercel.app`
 
 ## File Structure
-```
+
+```files
 proxy.ts                          Next.js middleware (locale redirect)
 i18n-config.ts                    locales: ["en","pt"], defaultLocale: "en"
 get-dictionary.ts                 lazy JSON loader
@@ -45,6 +47,7 @@ public/
 ```
 
 ## Layout Pattern
+
 ```tsx
 // page.tsx — sticky sidebar left, scrollable content right
 <Navbar />
@@ -64,6 +67,7 @@ public/
 ```
 
 ## Design Patterns
+
 - **Two-tone section title**: first line `text-white`, second line `text-zinc-800`, both `font-black uppercase tracking-tight text-4xl sm:text-5xl md:text-6xl xl:text-[7rem]`, wrapped in `motion.div` with `leading-none mb-12`
 - **Section padding**: `px-6 py-16 md:px-8 md:py-24`
 - **Scroll animations**: `useInView` from framer-motion, `once: true, margin: "-80px"`
@@ -74,6 +78,7 @@ public/
 - **ProfileSidebar mobile**: star icon `hidden md:flex`; card `w-full max-w-xs`; animation `y: 24, scale: 0.97` (not x)
 
 ## SEO / Metadata
+
 - `generateMetadata` in `[locale]/layout.tsx` (not static `export const metadata`)
 - OG image: `/og-image.png` (1200×630) — must be added to `/public/`
 - JSON-LD Person schema injected via `<script type="application/ld+json">` in `<head>`
@@ -103,6 +108,7 @@ public/
 ```
 
 ## Known Gotchas
+
 - `params` must be `Promise<{ locale: string }>` (not `Locale`) to satisfy Next.js 16 generated types
 - Framer Motion `ease` with variants causes type errors — use inline `initial/animate/transition` with `ease: [0.16, 1, 0.3, 1] as const`
 - Navbar desktop scroll bug was caused by a scroll handler conflicting with IntersectionObserver — removed entirely

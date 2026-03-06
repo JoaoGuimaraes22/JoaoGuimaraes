@@ -22,7 +22,7 @@ export default async function Page({
       <Navbar dict={dict} locale={locale} />
 
       {/* Below fixed navbar (h-14 = 56px) */}
-      <div className="pt-14 md:flex md:min-h-screen">
+      <div className="pt-14 md:flex md:min-h-screen xl:mx-auto xl:max-w-350">
 
         {/* Sticky sidebar — desktop only */}
         <aside className="hidden md:flex md:sticky md:top-14 md:h-[calc(100vh-3.5rem)] md:w-88 md:shrink-0 md:items-center md:justify-center md:border-r md:border-white/5 md:px-8">
@@ -46,11 +46,13 @@ export default async function Page({
             <ScrollDownCue />
           </div>
 
-          <Hero dict={dict} />
-          <Work dict={dict} />
-          <Experience dict={dict} />
-          <About dict={dict} />
-          <Contact dict={dict} />
+          <div className="xl:max-w-4xl 2xl:max-w-5xl">
+            <Hero dict={dict} />
+            <Work dict={dict} />
+            <Experience dict={dict} />
+            <About dict={dict} />
+            <Contact dict={dict} />
+          </div>
         </main>
 
       </div>

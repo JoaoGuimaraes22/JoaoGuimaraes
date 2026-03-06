@@ -21,7 +21,7 @@ export default function About({ dict }: AboutProps) {
   const { about } = dict;
 
   return (
-    <section id="about" className="px-6 py-16 md:px-8 md:py-24">
+    <section id="about" className="px-6 py-16 md:px-8 md:py-24 xl:px-16 xl:py-32">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 24 }}
@@ -46,7 +46,7 @@ export default function About({ dict }: AboutProps) {
           {about.bio.split("\n\n").map((paragraph, i) => (
             <p
               key={i}
-              className="mb-4 text-base leading-relaxed text-zinc-400 last:mb-0"
+              className="mb-4 text-base leading-relaxed text-zinc-400 last:mb-0 xl:text-lg"
             >
               {paragraph}
             </p>

@@ -36,7 +36,7 @@ export default function Contact({ dict }: ContactProps) {
   }
 
   return (
-    <section id="contact" className="px-6 py-16 md:px-8 md:py-24">
+    <section id="contact" className="px-6 py-16 md:px-8 md:py-24 xl:px-16 xl:py-32">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 24 }}
@@ -56,7 +56,7 @@ export default function Contact({ dict }: ContactProps) {
         initial={{ opacity: 0, y: 24 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-        className="mb-12 max-w-md text-base leading-relaxed text-zinc-400"
+        className="mb-12 max-w-md text-base leading-relaxed text-zinc-400 xl:max-w-xl xl:text-lg"
       >
         {contact.body}
       </motion.p>
