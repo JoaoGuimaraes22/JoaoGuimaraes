@@ -50,10 +50,10 @@ export default function ProfileSidebar({ dict }: ProfileSidebarProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -24 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
-      className="relative"
+      initial={{ opacity: 0, y: 24, scale: 0.97 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
+      className="relative w-full max-w-xs"
     >
       {/* Dashed border decoration */}
       <div
@@ -61,9 +61,9 @@ export default function ProfileSidebar({ dict }: ProfileSidebarProps) {
         style={{ border: "2px dashed rgba(59,130,246,0.25)" }}
       />
 
-      <div className="relative z-10 flex w-72 flex-col items-center rounded-2xl bg-white px-7 py-9 text-center shadow-2xl">
+      <div className="relative z-10 flex w-full flex-col items-center rounded-2xl bg-white px-7 py-9 text-center shadow-2xl">
         {/* Photo */}
-        <div className="relative mb-5 h-52 w-full overflow-hidden rounded-xl">
+        <div className="relative mb-5 h-56 w-full overflow-hidden rounded-xl md:h-52">
           <Image
             src="/profile.jpg"
             alt={hero.name}
@@ -77,7 +77,7 @@ export default function ProfileSidebar({ dict }: ProfileSidebarProps) {
         <p className="mb-2 text-lg font-bold text-zinc-900">{hero.name}</p>
 
         {/* Blue accent icon */}
-        <div className="mb-4 flex h-8 w-8 items-center justify-center rounded-full bg-blue-500">
+        <div className="mb-4 hidden h-8 w-8 items-center justify-center rounded-full bg-blue-500 md:flex">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
           </svg>
@@ -92,7 +92,7 @@ export default function ProfileSidebar({ dict }: ProfileSidebarProps) {
             href={contact.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-400 transition-colors hover:text-zinc-800"
+            className="text-zinc-400 transition-all duration-150 hover:scale-110 hover:text-blue-500"
             aria-label="GitHub"
           >
             <GitHubIcon />
@@ -101,14 +101,14 @@ export default function ProfileSidebar({ dict }: ProfileSidebarProps) {
             href={contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-400 transition-colors hover:text-zinc-800"
+            className="text-zinc-400 transition-all duration-150 hover:scale-110 hover:text-blue-500"
             aria-label="LinkedIn"
           >
             <LinkedInIcon />
           </a>
           <a
             href={`mailto:${contact.email}`}
-            className="text-zinc-400 transition-colors hover:text-zinc-800"
+            className="text-zinc-400 transition-all duration-150 hover:scale-110 hover:text-blue-500"
             aria-label="Email"
           >
             <EmailIcon />
@@ -118,7 +118,7 @@ export default function ProfileSidebar({ dict }: ProfileSidebarProps) {
         {/* Contact CTA */}
         <a
           href="#contact"
-          className="w-full rounded-full bg-blue-500 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-400"
+          className="w-full rounded-full bg-blue-500 py-2.5 text-sm font-medium text-white transition-all duration-150 hover:bg-blue-400 active:scale-95"
         >
           {nav.contact}
         </a>

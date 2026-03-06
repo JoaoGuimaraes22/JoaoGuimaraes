@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 interface Project {
@@ -15,23 +14,20 @@ interface Project {
 interface WorkProps {
   dict: {
     work: {
-      heading: string;
+      title_line1: string;
+      title_line2: string;
       projects: Project[];
     };
   };
 }
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
+function ProjectCard({ project, index, inView }: { project: Project; index: number; inView: boolean }) {
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, y: 32 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-      className="group rounded-2xl border border-white/5 bg-white/3 p-6 transition-colors hover:border-white/10 hover:bg-white/5"
+      transition={{ duration: 0.5, delay: index * 0.12, ease: "easeOut" }}
+      className="group rounded-2xl border border-white/5 bg-white/3 p-6 transition-all duration-200 hover:-translate-y-1 hover:border-white/10 hover:bg-white/5"
     >
       <div className="mb-4 flex items-start justify-between gap-4">
         <h3 className="text-lg font-semibold text-white">{project.title}</h3>
@@ -90,23 +86,26 @@ export default function Work({ dict }: WorkProps) {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="projects" className="px-6 py-16 md:py-24">
-      <div className="mx-auto max-w-4xl">
-        <motion.h2
-          ref={ref}
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-12 text-3xl font-bold text-white"
-        >
-          {dict.work.heading}
-        </motion.h2>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {dict.work.projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
-          ))}
+    <section id="projects" className="px-6 py-16 md:px-8 md:py-24">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 24 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
+        className="mb-12 leading-none"
+      >
+        <div className="text-4xl font-black uppercase tracking-tight text-white sm:text-5xl md:text-6xl xl:text-[7rem]">
+          {dict.work.title_line1}
         </div>
+        <div className="text-4xl font-black uppercase tracking-tight text-zinc-800 sm:text-5xl md:text-6xl xl:text-[7rem]">
+          {dict.work.title_line2}
+        </div>
+      </motion.div>
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {dict.work.projects.map((project, index) => (
+          <ProjectCard key={project.title} project={project} index={index} inView={inView} />
+        ))}
       </div>
     </section>
   );

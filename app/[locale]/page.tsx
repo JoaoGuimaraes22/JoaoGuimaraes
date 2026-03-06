@@ -7,6 +7,7 @@ import Work from "./components/Work";
 import Experience from "./components/Experience";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import ScrollDownCue from "./components/ScrollDownCue";
 
 export default async function Page({
   params,
@@ -31,8 +32,18 @@ export default async function Page({
         {/* Scrollable right content */}
         <main className="min-w-0 flex-1">
           {/* Mobile: profile card fills first screen */}
-          <div className="flex min-h-[calc(100vh-3.5rem)] items-center justify-center px-6 md:hidden">
-            <ProfileSidebar dict={dict} />
+          <div className="relative flex min-h-[calc(100vh-3.5rem)] flex-col items-center overflow-hidden px-6 pb-8 pt-6 md:hidden">
+            {/* Background glow */}
+            <div className="pointer-events-none absolute inset-0">
+              <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/8 blur-3xl" />
+            </div>
+
+            {/* Card centered in remaining space */}
+            <div className="flex flex-1 items-center">
+              <ProfileSidebar dict={dict} />
+            </div>
+
+            <ScrollDownCue />
           </div>
 
           <Hero dict={dict} />

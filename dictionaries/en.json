@@ -18,7 +18,8 @@
     ]
   },
   "work": {
-    "heading": "Selected Projects",
+    "title_line1": "SELECTED",
+    "title_line2": "PROJECTS",
     "projects": [
       {
         "title": "Project One",
@@ -44,7 +45,8 @@
     ]
   },
   "experience": {
-    "heading": "Experience",
+    "title_line1": "WORK",
+    "title_line2": "HISTORY",
     "items": [
       {
         "role": "Full-Stack Developer",
@@ -67,7 +69,8 @@
     ]
   },
   "about": {
-    "heading": "About Me",
+    "title_line1": "ABOUT",
+    "title_line2": "ME",
     "bio": "I'm a full-stack developer based in Brazil, passionate about building products that are fast, accessible, and delightful to use. I have a strong focus on the web platform and love working across the stack — from designing APIs to crafting pixel-perfect UIs.\n\nWhen I'm not coding, I'm probably exploring new tech, reading, or drinking way too much coffee.",
     "skills_heading": "Tech Stack",
     "skills": [
@@ -76,9 +79,15 @@
     ]
   },
   "contact": {
-    "heading": "Get in Touch",
+    "title_line1": "GET IN",
+    "title_line2": "TOUCH",
     "body": "I'm always open to new opportunities, collaborations, or just a friendly chat. Feel free to reach out!",
-    "email_label": "Send an Email",
+    "form_name": "Name",
+    "form_email": "Email",
+    "form_message": "Message",
+    "form_submit": "Send Message",
+    "form_success": "Message sent! I'll get back to you soon.",
+    "email_label": "Email me",
     "email": "joao@example.com",
     "github": "https://github.com/joaoguimaraes",
     "linkedin": "https://linkedin.com/in/joaoguimaraes"

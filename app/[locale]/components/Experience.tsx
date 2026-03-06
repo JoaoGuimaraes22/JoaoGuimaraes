@@ -13,13 +13,14 @@ interface ExperienceItem {
 interface ExperienceProps {
   dict: {
     experience: {
-      heading: string;
+      title_line1: string;
+      title_line2: string;
       items: ExperienceItem[];
     };
   };
 }
 
-function TimelineItem({ item, index }: { item: ExperienceItem; index: number }) {
+function TimelineItem({ item, index, total }: { item: ExperienceItem; index: number; total: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -32,7 +33,7 @@ function TimelineItem({ item, index }: { item: ExperienceItem; index: number }) 
       className="relative pl-8"
     >
       <div className="absolute left-0 top-1.5 h-2.5 w-2.5 rounded-full bg-blue-500 ring-4 ring-blue-500/20" />
-      {index < 2 && (
+      {index < total - 1 && (
         <div className="absolute left-[4.5px] top-4 h-full w-px bg-white/5" />
       )}
 
@@ -53,23 +54,31 @@ export default function Experience({ dict }: ExperienceProps) {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="experience" className="px-6 py-16 md:py-24">
-      <div className="mx-auto max-w-4xl">
-        <motion.h2
-          ref={ref}
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-12 text-3xl font-bold text-white"
-        >
-          {dict.experience.heading}
-        </motion.h2>
-
-        <div>
-          {dict.experience.items.map((item, index) => (
-            <TimelineItem key={item.company} item={item} index={index} />
-          ))}
+    <section id="experience" className="px-6 py-16 md:px-8 md:py-24">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 24 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
+        className="mb-12 leading-none"
+      >
+        <div className="text-4xl font-black uppercase tracking-tight text-white sm:text-5xl md:text-6xl xl:text-[7rem]">
+          {dict.experience.title_line1}
         </div>
+        <div className="text-4xl font-black uppercase tracking-tight text-zinc-800 sm:text-5xl md:text-6xl xl:text-[7rem]">
+          {dict.experience.title_line2}
+        </div>
+      </motion.div>
+
+      <div>
+        {dict.experience.items.map((item, index) => (
+          <TimelineItem
+            key={item.company}
+            item={item}
+            index={index}
+            total={dict.experience.items.length}
+          />
+        ))}
       </div>
     </section>
   );
