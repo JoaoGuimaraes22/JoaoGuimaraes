@@ -104,6 +104,12 @@
       { "name": "IA & Ferramentas", "items": ["NLP", "Dialogflow", "Bot Framework", "AR Foundation", "Unity", "VS Code"] }
     ]
   },
+  "chatbot": {
+    "title": "Pergunte-me qualquer coisa",
+    "welcome": "Olá! Sou o assistente de IA do João. Pergunte-me sobre as suas competências, projetos, experiência ou disponibilidade.",
+    "placeholder": "Pergunte qualquer coisa...",
+    "error": "Algo correu mal. Por favor tente novamente."
+  },
   "contact": {
     "title_line1": "FALE",
     "title_line2": "COMIGO",

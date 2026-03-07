@@ -9,6 +9,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import ScrollDownCue from "./components/ScrollDownCue";
 import TechStack from "./components/TechStack";
+import Chatbot from "./components/Chatbot";
 
 export default async function Page({
   params,
@@ -58,6 +59,7 @@ export default async function Page({
         </main>
 
       </div>
+      <Chatbot dict={dict.chatbot} locale={locale} />
     </>
   );
 }

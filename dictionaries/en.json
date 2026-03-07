@@ -104,6 +104,12 @@
       { "name": "AI & Tools", "items": ["NLP", "Dialogflow", "Bot Framework", "AR Foundation", "Unity", "VS Code"] }
     ]
   },
+  "chatbot": {
+    "title": "Ask me anything",
+    "welcome": "Hi! I'm João's AI assistant. Ask me anything about his skills, projects, experience, or availability.",
+    "placeholder": "Ask me anything...",
+    "error": "Something went wrong. Please try again."
+  },
   "contact": {
     "title_line1": "GET IN",
     "title_line2": "TOUCH",
